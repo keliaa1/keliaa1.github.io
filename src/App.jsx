@@ -9,20 +9,9 @@ import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 
 function App() {
-  const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'dark');
-
-  React.useEffect(() => {
-    document.body.className = theme === 'light' ? 'light-theme' : '';
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  };
-
   return (
-    <div className={`relative w-full min-h-screen ${theme === 'light' ? 'light-theme' : 'bg-black'}`}>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+    <div className="relative bg-black w-full min-h-screen">
+      <Navbar />
       <Hero />
       <About />
       <Skills />
