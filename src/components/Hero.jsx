@@ -24,29 +24,6 @@ const Hero = () => {
         className="absolute z-10 text-center"
         style={{ bottom: '150px', left: '50%', transform: 'translateX(-50%)' }}
       >
-        <a
-          href="#contact"
-          className="glass-morphism"
-          style={{
-            padding: '16px 40px',
-            borderRadius: '100px',
-            color: '#fff',
-            textDecoration: 'none',
-            fontSize: '12px',
-            fontWeight: '900',
-            letterSpacing: '0.4em'
-          }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(15, 15, 15, 0.5)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)';
-          }}
-        >
-          LET'S CONNECT
-        </a>
       </motion.div>
 
       <motion.div
