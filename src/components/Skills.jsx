@@ -13,7 +13,7 @@ const Skills = () => {
           transition={{ duration: 1 }}
         >
           <p style={{ color: 'var(--accent-orange)', fontWeight: '800', letterSpacing: '0.5em', fontSize: '10px', marginBottom: '30px' }}>THE ARSENAL</p>
-          <h2 className="text-gradient" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: '1', marginBottom: '40px' }}>
+          <h2 className="text-gradient mb-20" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: '1', marginBottom: '40px' }}>
             MY STACK.
           </h2>
         </motion.div>
