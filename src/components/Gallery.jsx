@@ -2,13 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import almostImg from '../assets/Almost.png';
 import roomImg from '../assets/final room frr.png';
+import room2Img from '../assets/room2.png';
 import sushiImg from '../assets/sushi.png';
 
 const Gallery = () => {
   const images = [
     { src: almostImg, title: "CYBERPUNK DREAM", size: "large" },
     { src: sushiImg, title: "NEON SUSHI", size: "small" },
-    { src: roomImg, title: "ISOMETRIC ROOM", size: "small" }
+    { src: roomImg, title: "ISOMETRIC ROOM", size: "small" },
+    { src: room2Img, title: "MODERN SPACE", size: "small" }
   ];
 
   return (
