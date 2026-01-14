@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Home, Compass, Calendar, Bookmark, Image, Telescope, Hexagon } from 'lucide-react';
+import { Home, Compass, Calendar, Bookmark, Briefcase, MessageSquare, Image, Telescope, Hexagon } from 'lucide-react';
 
 const Navbar = () => {
   const [active, setActive] = useState(0);
@@ -10,8 +10,10 @@ const Navbar = () => {
     { icon: <Compass size={20} strokeWidth={2.5} />, href: "#about", id: "about" },
     { icon: <Calendar size={20} strokeWidth={2.5} />, href: "#skills", id: "skills" },
     { icon: <Bookmark size={20} strokeWidth={2.5} />, href: "#projects", id: "projects" },
-    { icon: <Image size={20} strokeWidth={2.5} />, href: "#gallery", id: "gallery" },
+    { icon: <Briefcase size={20} strokeWidth={2.5} />, href: "#experience", id: "experience" },
+    { icon: <MessageSquare size={20} strokeWidth={2.5} />, href: "#testimonials", id: "testimonials" },
     { icon: <Telescope size={20} strokeWidth={2.5} />, href: "#blog", id: "blog" },
+    { icon: <Image size={20} strokeWidth={2.5} />, href: "#gallery", id: "gallery" },
     { icon: <Hexagon size={20} strokeWidth={2.5} />, href: "#contact", id: "contact" },
   ];
 
