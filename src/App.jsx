@@ -5,10 +5,10 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
+import Testimonials from './components/Testimonials'
 import BlogCTA from './components/BlogCTA'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
-
 function App() {
   return (
     <div className="relative bg-black w-full min-h-screen">
@@ -18,6 +18,7 @@ function App() {
       <Skills />
       <Projects />
       <Experience />
+      <Testimonials />
       <BlogCTA />
       <Gallery />
       <Contact />
