@@ -249,15 +249,8 @@ const Projects = () => {
               maxWidth: '500px',
             }}
           >
-            Let us show you how we drive your brand to{' '}
-            <span style={{
-              background: 'linear-gradient(90deg, #00d2ff, #ff00c8)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
-              new heights
-            </span>
+            View Some of the Projects I've worked on{' '}
+
           </motion.h2>
         </div>
 
