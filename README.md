@@ -1,16 +1,70 @@
-# React + Vite
+# 🎨 3D Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my **3D Portfolio** 👋  
+This repository showcases my journey, skills, and projects in **3D design and visualization**, combining creativity with technology.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👩‍💻 About Me
 
-## React Compiler
+Hi, I’m **Kayiranga Simbi Kelia**.  
+I’m a tech enthusiast and aspiring **3D designer / developer** with an interest in creating immersive visuals, interactive experiences, and modern digital designs.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio represents my growth in 3D — from beginner experiments to more refined models and scenes.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Tools & Technologies
+
+I work with (and am learning):
+
+- **Blender** – 3D modeling, texturing, lighting, and rendering  
+- **Three.js / Web-based 3D** (learning & experimenting)  
+- **HTML / CSS / JavaScript** (for web integration)  
+- **Git & GitHub** – version control and project management  
+
+---
+
+## 📂 What You’ll Find Here
+
+- 🧱 3D models (objects, environments, concepts)
+- 🌆 Scene renders and visual experiments
+- 🎥 Animations (where applicable)
+- 🌐 3D projects intended for the web
+- 📸 Renders and previews of my work
+
+Each project folder may include:
+- Source files  
+- Renders or screenshots  
+- A short description of the idea and process  
+
+---
+
+## 🚀 Goals of This Portfolio
+
+- Track my progress as a 3D designer  
+- Build a strong foundation in **3D for the web**  
+- Combine **software engineering + 3D design**  
+- Prepare for real-world projects, internships, and collaborations  
+
+---
+
+## 📈 Work in Progress
+
+This portfolio is **actively evolving**.  
+I regularly update it with new projects, improved models, and better techniques as I learn more.
+
+Feedback, suggestions, and constructive criticism are always welcome.
+
+---
+
+## 📬 Contact
+
+If you’d like to connect, collaborate, or give feedback:
+
+- GitHub: *(this repository)*  
+- Portfolio Website: *(add link if you have one)*  
+
+---
+
+⭐ If you like my work, feel free to star this repository!
