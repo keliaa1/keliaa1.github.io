@@ -6,37 +6,33 @@ const experiences = [
     year: "2024",
     title: "3D Designer",
     company: "Orthoverse",
-    color: "#1abc9c", // Teal/Cyan
+    color: "#1abc9c",
     position: "top",
-    description:
-      "Designed immersive 3D assets and environments for virtual spaces.",
+    description: "Designed immersive 3D assets and environments for virtual spaces.",
   },
   {
     year: "2025",
     title: "Front-End Developer",
     company: "Blink-Tech",
-    color: "#3498db", // Blue
+    color: "#3498db",
     position: "bottom",
-    description:
-      "Developed responsive and interactive user interfaces, ensuring high performance and seamless user experiences.",
+    description: "Developed responsive and interactive user interfaces ensuring high performance.",
   },
   {
     year: "2025-",
     title: "Freelance",
     company: "Freelance",
-    color: "#2980b9", // Dark Blue
+    color: "#2980b9",
     position: "top",
-    description:
-      "Delivering custom frontend solutions and 3D designs for diverse clients, focusing on innovation and quality.",
+    description: "Delivering custom frontend solutions and 3D designs for diverse clients.",
   },
   {
     year: "2026",
     title: "CoFounder & Lead Dev",
     company: "4Ward",
-    color: "#8e44ad", // Purple
+    color: "#8e44ad",
     position: "bottom",
-    description:
-      "Leading the technical vision and frontend architecture for a startup focused on next-gen digital solutions.",
+    description: "Leading technical vision and frontend architecture for a next-gen startup.",
   },
 ];
 
@@ -45,244 +41,239 @@ const Experience = () => {
     <section
       id="experience"
       style={{
-        minHeight: "150vh",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         justifyContent: "center",
-        padding: "100px 0",
+        padding: "0 40px",
         background: "black",
         overflow: "hidden",
-        marginBottom: "200px",
       }}
     >
-      <div className="w-full px-10">
-        <div className="text-left mb-48">
-          <h2
-            className="text-white"
-            style={{
-              fontSize: "80px",
-              fontWeight: "900",
-              lineHeight: "0.8",
-              letterSpacing: "-4px",
-            }}
+      {/* Header */}
+      <div style={{ marginBottom: "28px", textAlign: "center", width: "100%", maxWidth: "900px" }}>
+        <h2
+          style={{
+            fontSize: "42px",
+            fontWeight: "900",
+            lineHeight: "0.85",
+            letterSpacing: "-3px",
+            color: "#fff",
+          }}
+        >
+          <motion.span initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}>
+            TIMELINE
+          </motion.span>
+          <br />
+          <motion.span
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            style={{ color: "rgba(255,255,255,0.05)" }}
           >
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-            >
-              TIMELINE
-            </motion.span>
-            <br />
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              style={{ color: "rgba(255,255,255,0.05)" }}
-            >
-              Experience
-            </motion.span>
-          </h2>
-          <div className="flex gap-3 mt-8">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: i * 0.05 }}
-                className="w-2 h-2 rounded-full bg-white/10"
-              />
-            ))}
-          </div>
+            Experience
+          </motion.span>
+        </h2>
+        <div style={{ display: "flex", gap: "8px", marginTop: "10px", justifyContent: "center" }}>
+          {[...Array(16)].map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: i * 0.04 }}
+              style={{ width: "6px", height: "6px", borderRadius: "50%", background: "rgba(255,255,255,0.1)" }}
+            />
+          ))}
         </div>
+      </div>
 
-        <div className="relative w-full max-w-[750px] mx-[50px] min-h-[800px] flex items-center px-4">
-          {/* Main Dotted Timeline */}
-          <div className="absolute top-1/2 left-0 w-full h-0 border-t-2 border-dashed border-white/10 -translate-y-1/2" />
+      {/* Timeline */}
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          maxWidth: "900px",
+          height: "380px",
+          display: "flex",
+          alignItems: "center",
+          margin: "0 auto",
+        }}
+      >
+        {/* Horizontal dotted line */}
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: 0,
+            width: "100%",
+            height: 0,
+            borderTop: "2px dashed rgba(255,255,255,0.1)",
+            transform: "translateY(-50%)",
+          }}
+        />
 
-          <div
-            className="flex justify-between w-full relative z-10"
-            style={{ gap: "10px" }}
-          >
-            {experiences.map((exp, idx) => {
-              const isEarlyYear = idx < 1; // 2024
-              const isRightCurve = idx === 2; // 2025- curve right
-              const isLeftCurve = idx === 1; // 2025 curve left
-              const cardSide = isEarlyYear ? "left" : "right"; // If isEarlyYear, anchor to left of node (meaning card is to the right)
+        {/* Nodes */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+            position: "relative",
+            zIndex: 10,
+            padding: "0 20px",
+          }}
+        >
+          {experiences.map((exp, idx) => {
+            const isTop = exp.position === "top";
+            const isEarlyYear = idx < 1;
+            const isRightCurve = idx === 2;
+            const isLeftCurve = idx === 1;
 
-              return (
-                <div key={idx} className="relative flex flex-col items-center">
-                  {/* Year Node */}
-                  <motion.div
+            // SVG curve dimensions — compact
+            const svgW = 160;
+            const svgH = 170;
+
+            return (
+              <div key={idx} style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                {/* Year node */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, type: "spring", stiffness: 150 }}
+                  style={{
+                    width: "52px",
+                    height: "52px",
+                    borderRadius: "50%",
+                    background: "#000",
+                    border: `4px solid ${exp.color}`,
+                    boxShadow: `0 0 20px ${exp.color}44`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative",
+                    zIndex: 20,
+                  }}
+                >
+                  <span style={{ fontSize: "11px", fontWeight: 900, color: "#fff" }}>{exp.year}</span>
+                </motion.div>
+
+                {/* SVG curve */}
+                <svg
+                  className="hidden md:block"
+                  style={{
+                    position: "absolute",
+                    width: `${svgW}px`,
+                    height: `${svgH}px`,
+                    overflow: "visible",
+                    pointerEvents: "none",
+                    [isTop ? "bottom" : "top"]: "26px",
+                    left: "50%",
+                    transform:
+                      isEarlyYear || isRightCurve
+                        ? "translateX(0)"
+                        : "translateX(-100%)",
+                  }}
+                >
+                  <motion.path
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}
+                    d={
+                      isEarlyYear || isRightCurve
+                        ? isTop
+                          ? `M 0 ${svgH} L 0 ${svgH * 0.6} C 0 ${svgH * 0.1} ${svgW} ${svgH * 0.1} ${svgW} ${svgH * 0.35}`
+                          : `M 0 0 L 0 ${svgH * 0.4} C 0 ${svgH * 0.9} ${svgW} ${svgH * 0.9} ${svgW} ${svgH * 0.65}`
+                        : isTop
+                        ? `M ${svgW} ${svgH} L ${svgW} ${svgH * 0.6} C ${svgW} ${svgH * 0.1} 0 ${svgH * 0.1} 0 ${svgH * 0.35}`
+                        : `M ${svgW} 0 L ${svgW} ${svgH * 0.4} C ${svgW} ${svgH * 0.9} 0 ${svgH * 0.9} 0 ${svgH * 0.65}`
+                    }
+                    fill="none"
+                    stroke={exp.color}
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                  <motion.circle
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{
-                      delay: idx * 0.1,
-                      type: "spring",
-                      stiffness: 150,
-                    }}
-                    className="w-16 h-16 rounded-full bg-black border-[5px] flex items-center justify-center relative z-20"
+                    transition={{ delay: 1.5 + idx * 0.1 }}
+                    cx={isEarlyYear || isRightCurve ? svgW : 0}
+                    cy={isTop ? svgH * 0.35 : svgH * 0.65}
+                    r="6"
+                    fill={exp.color}
+                  />
+                </svg>
+
+                {/* Info card */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, x: isEarlyYear || isRightCurve ? 30 : -30 }}
+                  whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1.2 + idx * 0.1, type: "spring", stiffness: 80 }}
+                  style={{
+                    position: "absolute",
+                    zIndex: 30,
+                    [isTop ? "bottom" : "top"]: "110px",
+                    [(isEarlyYear || isRightCurve) ? "left" : "right"]: "100px",
+                    width: "210px",
+                    borderRadius: "20px",
+                    padding: "12px 14px",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "rgba(5,5,5,0.7)",
+                    backdropFilter: "blur(20px)",
+                    boxShadow: `0 20px 60px -10px rgba(0,0,0,0.8), 0 0 30px ${exp.color}15`,
+                    display: "flex",
+                    flexDirection: "row-reverse",
+                    alignItems: "center",
+                    gap: "12px",
+                  }}
+                >
+                  {/* Avatar */}
+                  <div
                     style={{
-                      borderColor: exp.color,
-                      boxShadow: `0 0 30px ${exp.color}44`,
+                      flexShrink: 0,
+                      width: "44px",
+                      height: "44px",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: `linear-gradient(225deg, ${exp.color}55, ${exp.color}11)`,
+                      border: `2px solid ${exp.color}77`,
+                      fontSize: "18px",
+                      fontWeight: 900,
+                      color: exp.color,
+                      textShadow: `0 0 20px ${exp.color}88`,
+                      position: "relative",
+                      overflow: "hidden",
                     }}
                   >
-                    <span className="text-[14px] font-black text-white">
-                      {exp.year}
+                    {exp.company.charAt(0)}
+                    <div style={{ position: "absolute", inset: 0, background: exp.color, opacity: 0.12, filter: "blur(8px)" }} />
+                  </div>
+
+                  {/* Text */}
+                  <div style={{ flex: 1, textAlign: "right" }}>
+                    <h4 style={{ fontSize: "14px", fontWeight: 800, color: "#fff", marginBottom: "2px", lineHeight: 1.2 }}>
+                      {exp.title}
+                    </h4>
+                    <span style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: exp.color, opacity: 0.9 }}>
+                      {exp.company} // {exp.year}
                     </span>
-                  </motion.div>
+                    <p style={{ marginTop: "6px", color: "rgba(255,255,255,0.55)", fontSize: "11px", lineHeight: 1.5 }}>
+                      {exp.description}
+                    </p>
+                  </div>
 
-                  {/* Curved Connector SVG - Hook Shape (Pointing Inward) */}
-                  <svg
-                    className="absolute pointer-events-none overflow-visible"
-                    style={{
-                      width: "240px",
-                      height: "400px",
-                      [exp.position === "top" ? "bottom" : "top"]: "32px",
-                      left: "50%",
-                      transform:
-                        isEarlyYear || isRightCurve
-                          ? "translateX(0)"
-                          : "translateX(-100%)",
-                    }}
-                  >
-                    <motion.path
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2, delay: 0.6 + idx * 0.1 }}
-                      d={
-                        isEarlyYear || isRightCurve
-                          ? exp.position === "top"
-                            ? "M 0 400 L 0 250 C 0 50 240 50 240 150"
-                            : "M 0 0 L 0 150 C 0 350 240 350 240 250"
-                          : isLeftCurve
-                          ? exp.position === "top"
-                            ? "M 240 400 L 240 250 C 240 50 0 50 0 150"
-                            : "M 240 0 L 240 150 C 240 350 0 350 0 250"
-                          : exp.position === "top"
-                          ? "M 240 400 L 240 250 C 240 50 0 50 0 150"
-                          : "M 240 0 L 240 150 C 240 350 0 350 0 250"
-                      }
-                      fill="none"
-                      stroke={exp.color}
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                    {/* End Tip on path */}
-                    <motion.circle
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 1.8 + idx * 0.1 }}
-                      cx={isEarlyYear || isRightCurve ? 240 : 0}
-                      cy={exp.position === "top" ? 150 : 250}
-                      r="8"
-                      fill={exp.color}
-                    />
-                  </svg>
-
-                  {/* Info Card - Spacious Right-Aligned Layout */}
-                  <motion.div
-                    initial={{
-                      opacity: 0,
-                      scale: 0.9,
-                      x:
-                        isEarlyYear || isRightCurve
-                          ? 40
-                          : isLeftCurve
-                          ? -40
-                          : -40,
-                    }}
-                    whileInView={{ opacity: 1, scale: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: 1.5 + idx * 0.1,
-                      type: "spring",
-                      stiffness: 80,
-                    }}
-                    className="absolute z-30 flex flex-row-reverse items-center"
-                    style={{
-                      [exp.position === "top" ? "bottom" : "top"]: "240px",
-                      [isLeftCurve
-                        ? "right"
-                        : isEarlyYear || isRightCurve
-                        ? "left"
-                        : "right"]: "200px",
-                      width: "280px",
-                      borderRadius: "32px",
-                      padding: "15px",
-                      gap: "24px",
-                      border: `1px solid rgba(255, 255, 255, 0.08)`,
-                      background: "rgba(5, 5, 5, 0.65)",
-                      backdropFilter: "blur(20px)",
-                      boxShadow: `0 30px 80px -20px rgba(0,0,0,0.8), 0 0 40px ${exp.color}15`,
-                    }}
-                  >
-                    {/* Right Side (Avatar/Icon) due to flex-row-reverse */}
-                    <div
-                      className="flex-shrink-0 w-20 h-20 rounded-full flex items-center justify-center relative overflow-hidden"
-                      style={{
-                        background: `linear-gradient(225deg, ${exp.color}55, ${exp.color}11)`,
-                        border: `2px solid ${exp.color}77`,
-                      }}
-                    >
-                      <div
-                        className="text-[28px] font-black"
-                        style={{
-                          color: exp.color,
-                          textShadow: `0 0 30px ${exp.color}88`,
-                        }}
-                      >
-                        {exp.company.charAt(0)}
-                      </div>
-                      <div
-                        className="absolute inset-0 blur-xl opacity-40"
-                        style={{ background: exp.color }}
-                      />
-                    </div>
-
-                    {/* Left Side (Content) due to flex-row-reverse - Aligned Right */}
-                    <div
-                      className="flex flex-col flex-grow text-right items-end"
-                      style={{ gap: "20px" }}
-                    >
-                      <div className="flex flex-col">
-                        <h4 className="text-[24px] font-bold text-white leading-tight mb-1">
-                          {exp.title}
-                        </h4>
-                        <span
-                          className="text-[12px] font-bold tracking-[0.2em] uppercase opacity-70"
-                          style={{ color: exp.color }}
-                        >
-                          {exp.company} // {exp.year}
-                        </span>
-                      </div>
-
-                      <p className="text-white/70 text-[15px] leading-relaxed font-medium">
-                        {exp.description}
-                      </p>
-
-                      {/* Decorative Elements */}
-                      <div className="flex items-center gap-4 opacity-30">
-                        <div className="h-px w-16 bg-gradient-to-l from-white/40 to-transparent" />
-                        <div className="flex gap-2">
-                          <div className="w-2 h-2 rounded-full bg-white/40" />
-                          <div className="w-2 h-2 rounded-full bg-white/40" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Aesthetic Background Element */}
-                    <div
-                      className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-[80px] opacity-10"
-                      style={{ background: exp.color }}
-                    />
-                  </motion.div>
-                </div>
-              );
-            })}
-          </div>
+                  {/* Glow */}
+                  <div style={{ position: "absolute", top: "-20px", right: "-20px", width: "60px", height: "60px", borderRadius: "50%", background: exp.color, opacity: 0.07, filter: "blur(30px)" }} />
+                </motion.div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

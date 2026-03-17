@@ -3,42 +3,48 @@ import { Marquee } from "./magicui/Marquee";
 import ReviewCard from "./magicui/ReviewCard";
 import { motion } from "framer-motion";
 
+import imgLoic from "../assets/Loic.png";
+import imgMelissa from "../assets/Melissa.png";
+import imgLaurent from "../assets/Laurent.png";
+import imgAaron from "../assets/Aaron.png";
+import imgHappy from "../assets/Happy.png";
+
 const reviews = [
   {
-    name: "Happy",
-    username: "Founder at 4Ward ",
-    body: "I've never seen anything like this before. It's amazing. I love the creative thinking of Kelia.",
-    img: "https://avatar.vercel.sh/jack",
+    name: "Ndahiro Loic",
+    username: "@loic",
+    body: "Kelia builds clean, responsive, and user-friendly interfaces with great attention to detail.",
+    img: imgLoic,
   },
   {
-    name: "John",
-    username: "Ceo",
-    body: "I don't know what to say. I'm speechless. Kelia is truly talented",
-    img: "src/assets/man1.jpg",
+    name: "Ndanyuzwe Melissa",
+    username: "@melissa",
+    body: "I’ve seen Kelia’s work in 3D design, and it’s clear she has both technical skill and artistic vision. She experiments confidently and produces visually engaging results.",
+    img: imgMelissa,
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "src/assets/man1.jpg",
+    name: "Nyumbayire Laurent",
+    username: "@laurent",
+    body: "Kelia has a strong eye for UI/UX. She doesn’t just build interfaces—she crafts experiences. Her designs are user-friendly, accessible, and aesthetically pleasing.",
+    img: imgLaurent,
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "The 3D integration using Three.js and Spline was seamless. Performance stayed solid even on mobile.",
-    img: "src/assets/girl1.jpg",
+    name: "Twarimitswe Aaron",
+    username: "@aaron",
+    body: "What makes Kelia stand out is her versatility. She’s not just a developer or a designer—she’s both, with a growing strength in cybersecurity. That combination makes her incredibly valuable in modern tech projects.",
+    img: imgAaron,
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "What stood out was attention to detail. From animations to responsiveness, everything felt intentional and polished.",
-    img: "src/assets/girl1.jpg",
+    name: "Irakoze Murasira Berard",
+    username: "@berard",
+    body: "I was particularly impressed by Kelia’s ability to understand and exploit security flaws. She approaches problems methodically and documents her findings clearly, which is crucial in cybersecurity work.",
+    img: "https://avatar.vercel.sh/berard",
   },
   {
-    name: "James",
-    username: "@james",
-    body: "Kelia transformed our idea into a visually stunning website. The 3D elements were smooth, fast, and actually enhanced the user experience instead of slowing it down.",
-    img: "src/assets/man2.jpg",
+    name: "Cyizere Happy",
+    username: "@happy",
+    body: "Kelia is a rare talent who blends frontend development, 3D design, and cybersecurity. She can design beautiful interfaces, enhance them with 3D elements, and still think critically about system security.",
+    img: imgHappy,
   },
 ];
 
@@ -49,7 +55,8 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="relative flex h-[800px] w-full flex-col items-center justify-center overflow-hidden bg-black py-20"
+      className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-black py-14"
+      style={{ minHeight: '520px' }}
     >
       <div className="mb-20 text-center z-10">
         <h2 className="text-white" style={{ fontSize: '60px', fontWeight: '900', letterSpacing: '-2px' }}>
@@ -68,20 +75,34 @@ const Testimonials = () => {
         </motion.p>
       </div>
 
-      <Marquee pauseOnHover className="[--duration:40s]" style={{ '--gap': '2.5rem', '--duration': '90s' }}>
+      <Marquee pauseOnHover className="[--duration:40s]" style={{ '--gap': '1.2rem', '--duration': '90s' }}>
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:40s]" style={{ '--gap': '2.5rem', '--duration': '90s', marginTop: '2.5rem' }}>
+      <Marquee reverse pauseOnHover className="[--duration:40s]" style={{ '--gap': '1.2rem', '--duration': '90s', marginTop: '1.2rem' }}>
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
 
-      {/* Gradient Edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black dark:from-background"></div>
+      {/* Gradient Edges — deep fade like screenshot */}
+      <div style={{
+        pointerEvents: 'none',
+        position: 'absolute',
+        inset: '0 auto 0 0',
+        width: '220px',
+        background: 'linear-gradient(to right, #000000 40%, transparent)',
+        zIndex: 10,
+      }} />
+      <div style={{
+        pointerEvents: 'none',
+        position: 'absolute',
+        inset: '0 0 0 auto',
+        width: '220px',
+        background: 'linear-gradient(to left, #000000 40%, transparent)',
+        zIndex: 10,
+      }} />
     </section>
   );
 };

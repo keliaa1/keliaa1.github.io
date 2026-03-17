@@ -146,3 +146,30 @@ html {
 .gap-var { gap: var(--gap); }
 .p-2 { padding: 0.5rem; }
 .w-full { width: 100%; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Typography and Layout shrinkers for small screens */
+  h1 { font-size: clamp(2.5rem, 8vw, 4rem) !important; }
+  h2 { font-size: clamp(2rem, 6vw, 3rem) !important; }
+  
+  .section-container {
+    padding: 0 1.25rem;
+  }
+  
+  /* Project Cards responsive override */
+  #projects > div > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  #projects .ProjectCard-Wrapper {
+    justify-content: center !important;
+    margin-bottom: 24px !important;
+  }
+  
+  #projects svg[viewBox="0 0 260 60"] {
+    display: none !important; /* hide zig zag connectors */
+  }
+}
